@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 }))
 app.use('/graphiql',
     graphiqlExpress({
-        //para indicar el servidor de graphql
+        //para indicar el servidor de graphql que está escuchando
         endpointURL: '/graphql'
     }))
 
