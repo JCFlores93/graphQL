@@ -10,7 +10,7 @@ const typeDefs = `
         #Descripcion del curso
         descripcion: String!
         profesor: Profesor
-        rating: Float
+        rating: Float @deprecated(reason: "No creeemos más en los puntajes")
         comentario: [Comentario]
     }
     type Profesor {
