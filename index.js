@@ -9,7 +9,13 @@ const app = express()
 app.use('/graphql',
     bodyParser.json(),
     graphqlExpress({
-        schema
+        schema,
+        formatError: (error) => {
+            return {
+                codigo: 'a43',
+                mensaje: error.message
+            }
+        }
     }))
 
 app.use(bodyParser.urlencoded({

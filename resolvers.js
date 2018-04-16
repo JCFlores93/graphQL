@@ -31,7 +31,10 @@ const resolvers = {
         },
         profesorDelete: (_, args) => {
             return Profesor.query().findById(args.profesorId).then(profesor => {
-                return Profesor.query().deleteById(args.profesorId).then(() => profesor)
+                return Profesor.query().deleteById(args.profesorId).then((filasBorradas) => {
+                    if(filasBorradas > 0 ) return profesor
+                    throw new Error(`El profesor con id ${args.profesorId} no se pudo eliminar`)
+                })
             })
         },
         cursoAdd: (_, args) => {
