@@ -19,6 +19,10 @@ const rootQuery = `
         type Mutation {
             profesorAdd(profesor: NuevoProfesor):Profesor
             profesorEdit(profesorId: Int!, profesor: ProfesorEditable): Profesor
+            profesorDelete(profesorId: Int!): Profesor
+            cursoAdd(curso: NuevoCurso): Curso
+            cursoEdit(cursoId: Int!, curso: CursoEditable): Curso
+            cursoDelete(cursoId: Int!): Curso
         }
 `
 
